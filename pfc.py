@@ -60,4 +60,13 @@
         #afficher "Tour egalité"
 
     #afficher scoreJoueur et scoreOrdinateur
+
+    #si scoreJoueur est egal a 3
+    #alors afficher "bien joué, tu est fort"
+    #si scoreJoueur est inférieur a 3
+    #alors afficher "tu est nul"
+    #si scoreOrdinateur est egal a 3
+    #afficher "Tu as battu un humain"
+    #si scoreOrdinateur est inferieur a 3
+    #alors afficher "Nul la technologie"
 #afficher scoreTour
