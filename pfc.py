@@ -1,72 +1,69 @@
 # DEBUT
+import random
+scoreJoueur=0
+scoreOrdinateur=0
+def fonctionTour():
+    if choixJoueur == 0:
+        if choixOrdinateur == 0:
+            return("égalité")
+        elif choixOrdinateur == 1:
+            return("perdu")
+        elif choixOrdinateur == 2:
+            return("gagnée")
 
-#initialiser scoreJoueur a 0 
-#initialiser scoreOrdinateur a 0
+    elif choixJoueur ==1:
+        if choixOrdinateur == 0:
+            return("gagnée")
+        elif choixOrdinateur == 1:
+            return("égalité")
+        elif choixOrdinateur == 2:
+            return("perdu")
 
-#definir la fonction Tour
+    elif choixJoueur ==2:
+        if choixOrdinateur == 0:
+            return("perdu")
+        elif choixOrdinateur == 1:
+            return("gagnée")
+        elif choixOrdinateur == 2:
+            return("égalité")
+    else:
+        return("erreur")
 
-    #si choix joueur est égale à 0
-        #si choixOrdinateur egal a 0
-            #alors resultat = "egalité"
-        #si choixOrdinateur egal a 1 
-            #alors resultat = "perdu"
-        #si choixOrdinateur = 2
-            #alors resultat ="gagnée"
+while ((scoreJoueur<3) and (scoreOrdinateur< 3)):
+    choixOrdinateur = random.randint(0,2)
+    choixJoueur = int(input("pierre(0) , feuille (1) , ciseau (2)"))
+    scoreTour = fonctionTour()
+    
+    if choixJoueur == 0:
+        print("le joueur a fait pierre")
+    elif choixJoueur == 1:
+        print("le joueur a fait feuille")
+    elif choixJoueur == 2:
+        print("le joueur a fait ciseau")
 
-    #si choix joueur est égale à 1
-        #si choixOrdinateur egal a 0
-            #alors resultat = "gagnée"
-        #si choixOrdinateur egal a 1 
-            #alors resultat = "egalité"
-        #si choixOrdinateur = 2
-            #alors resultat ="perdu"
+    if choixOrdinateur == 0:
+        print("l'ordinateur a fait pierre")
+    elif choixOrdinateur == 1:
+        print("l'ordinateur a fait feuille")
+    elif choixOrdinateur == 2:
+        print("l'ordinateur a fait ciseau")
 
-    #si choix joueur est égale à 2
-        #si choixOrdinateur egal a 0
-            #alors resultat = "perdu"
-        #si choixOrdinateur egal a 1 
-            #alors resultat = "gagnée"
-        #si choixOrdinateur = 2
-            #alors resultat ="egalité"
 
-    #retourner resultat
-#tant que scoreJoueur et scoreOrdinateur sont inferieur a 3
-    #Initialiser choixOrdinateur puis assigner le valeur retourner de random(0,2)
-    #Initialiser choixJoueur puis assigner le valeur input( la valeur doit etre, 0,1 ou 2)
-    #Initialiser scoreTour puis assigner la valeur retourner de Tour()
+    if (scoreTour == "gagnée" ):
+        scoreJoueur  += 1
+        print("Tour gagnant")
+    elif (scoreTour == "perdu"):
+        scoreOrdinateur  += 1
+        print("Tour perdant")
+    elif (scoreTour == "égalité"):
+        print("Tour égalité")
+    elif(scoreTour== "erreur"):
+        print("erreur")
+    
+    print(scoreJoueur,scoreOrdinateur)
 
-    #si choixJoueur egal a 0
-        #alors afficher = "le joueur a fait pierre"
-    #si choixJoueur egal a 1 
-        #alors afficher = "le joueur a fait feuille"
-    #si choixOrdinateur egal a 2
-        #alors afficher ="le joueur a fait ciseau"
-
-    #si choixOrdinateur egal a 0
-        #alors afficher "l'ordinateur a fait pierre"
-    #si choixOrdinateur egal a 1 
-        #alors afficher "l'ordinateur a fait feuille"
-    #si choixOrdinateur a 2
-        #alors afficher "l'ordinateur a fait ciseau"
-
-    #si resultatTour est egal a gagnée 
-        #alors incrementer scoreJoueur de 1
-        #afficher "Tour gagnant"
-    #sinon si resultat Tour est egal a perdu
-        #alors incrementer scoreOrdinateur de 1
-        #afficher "Tour perdant"
-    #sinon si resultat Tour est egal a egalité
-        #alors incrementer 0
-        #afficher "Tour egalité"
-
-    #afficher scoreJoueur et scoreOrdinateur
-
-    #si scoreJoueur est egal a 3
-    #alors afficher "bien joué, tu est fort"
-    #si scoreJoueur est inférieur a 3
-    #alors afficher "tu est nul"
-    #si scoreOrdinateur est egal a 3
-    #afficher "Tu as battu un humain"
-    #si scoreOrdinateur est inferieur a 3
-    #alors afficher "Nul la technologie"
-#afficher scoreTour
+    if scoreJoueur == 3:
+        print("bien joué , tu est fort")
+    elif scoreOrdinateur == 3:
+        print("tu est nul")
+    #Fin
